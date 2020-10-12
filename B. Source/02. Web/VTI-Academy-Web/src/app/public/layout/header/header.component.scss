@@ -1,0 +1,112 @@
+.header {
+  margin: 0;
+  padding: 0;
+  & .contact {
+    position: fixed;
+    height: 23px;
+    position: relative;
+    & .phone-cover {
+      padding: 0px;
+      padding-left: 15px;
+    }
+    & .email-cover {
+      padding: 0px;
+    }
+    & .phone {
+      font-size: 90%;
+      float: left;
+      color: #11365a;
+      & i {
+        padding-right: 3px;
+      }
+    }
+    & .email {
+      font-size: 90%;
+      float: left;
+      color: #11365a;
+      & i {
+        padding-right: 3px;
+      }
+    }
+    & .social {
+      float: right;
+      & div {
+        & i {
+          font-size: 100%;
+        }
+      }
+    }
+  }
+}
+
+.hidden{
+  display: none !important;
+}
+.bg-header{
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  background-color: #f1f1f1 !important;
+  z-index: 1000;
+}
+.active{
+  color: #11365a !important;
+}
+
+nav {
+  padding: 0px;
+  background-color: #f3efef;
+  & .logo-img {
+    width: 10%;
+    & .navbar-brand {
+      margin: 0 auto;
+        & .logo {
+          height: 70px;
+            & img {
+              height: 90%;
+              margin-left: 10px;
+              margin-top: 5px;
+            }
+        }
+    }
+  }
+
+  & .container {
+    padding: 0px;
+    margin: 0px;
+    align-items: flex-start;
+  }
+
+  .main-menu{
+    width: 90%;
+  }
+}
+
+.menu {
+  & .menu-item {
+    margin: 0 auto;
+    & ul {
+      padding-right: 0;
+      margin: 0 5% 0 5%;
+      & .nav-item {
+        float: left;
+        padding: 0px;
+        & a {
+          padding: 0px;
+          font-weight: bolder;
+          font-size: medium;
+          color: #7c9fb0;
+          display: inline-flexbox;
+          text-decoration: none; 
+          position: relative; 
+          & :hover {
+            color: #11365a;
+          }
+          & div {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<div class="position-social">
+  <div class="icon mb-4">
+    <a href="{{contact?.facebook}}" target="blank"><img src="assets/img/logo/facebook.png" alt="facebook img" /></a>
+  </div>
+  <div class="icon mb-4">
+    <a href="{{contact?.youtube}}" target="blank"><img src="assets/img/logo/youtube.png" alt="youtube img" /></a>
+  </div>
+  <div class="icon mb-4">
+    <a href="tel:{{contact?.phone}}"><img src="../../../../assets/img/logo/phoneicon.png" alt="google plus img"/></a>
+  </div>
+</div>
+
+<div class="gift" (click)="ScholarshipForm()">
+  <i class="far fa-hand-point-up" id="icon"></i>
+  Đăng ký ngay nhận học bổng
+</div>
+
+<div *ngIf="showScholarshipForm">
+  <app-scholarship-form></app-scholarship-form>
+</div>

@@ -1,0 +1,60 @@
+.carousel-inner {
+    & .carousel-item {
+        & .above {
+            & .image-review {
+                height: 20vw;
+            }
+            & .single-review {
+                text-align: justify;
+                padding-left: 5%;
+                & .heading-review {
+                    font-size: 1.6vw;
+                    font-weight: bold;
+                    color: #107cbc;
+                }
+                & .text-office {
+                    font-size: 1.4vw;
+                }
+                & .text-review {
+                    font-style: italic;
+                    font-size: 1.2vw;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .carousel-inner {
+        padding: 2%;
+        & .carousel-item {
+            & .above {
+                & .image-review {
+                    height: 32vw;
+                    & .w-100 {
+                        width: 50% !important;
+                        margin-left: 25%;
+                    }
+                    & .h-100 {
+                        width: 50% !important;
+                    }
+                }
+                & .single-review {
+                    margin: 5% 0;
+                    & .heading-review {
+                        font-size: 2.6vw;
+                        font-weight: bold;
+                        color: #107cbc;
+                    }
+                    & .text-office {
+                        font-size: 2.4vw;
+                    }
+                    & .text-review {
+                        font-style: italic;
+                        font-size: 2.2vw;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+            <div class="carousel-item {{ n== 0 ? ' active' : '' }}" *ngFor="let i of banner; let n = index">
+                <img src="../../../../assets/img/main-Banner/{{i?.image}}" class="d-block w-100 banner" alt="Responsive image">
+                <a (click)="toNewTab(i?.url)" id="buttonBanner01" class="btn btn-success" role="button"><b>Tìm hiểu thêm</b></a>
+            </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+
+        <span class="icon">&#8249;</span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="icon">&#8250;</span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

@@ -1,0 +1,132 @@
+<div class="container-all">
+    <div class="scholar-form {{close}}">
+      <div class="m-3">
+      </div>
+    </div>
+    <app-main-banner></app-main-banner>
+    <div class="strength">
+        <div class="title">
+            <p>TẠI SAO LỰA CHỌN CHÚNG TÔI</p>
+        </div>
+        <div class="content">
+            <div class="d-flex up">
+                <div class="position-relative">
+                    <div class="d-flex">
+                        <div id="before"></div>
+                        <div id="hexagon"></div>
+                        <div id="after"></div>
+                    </div>
+                    <div class="position">
+                        <p>Chương trình</p>đào tạo
+                        <span class="hightlight"> CHUẨN </span>
+                        <p>doanh nghiệp CNTT</p>
+                    </div>
+                </div>
+                <div class="position-relative">
+                    <div class="d-flex">
+                        <div id="before"></div>
+                        <div id="hexagon"></div>
+                        <div id="after"></div>
+                    </div>
+                    <div class="position">
+                        200 giờ học
+                        <span class="hightlight"> OFFLINE </span>
+                        & học
+                        <span class="hightlight"> ONLINE </span>
+                        mọi lúc mọi nơi
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex down">
+                <div class="position-relative">
+
+                    <div class="d-flex">
+                        <div id="before"></div>
+                        <div id="hexagon"></div>
+                        <div id="after"></div>
+                    </div>
+                    <div class="position"><span class="hightlight"> MENTOR </span> <p>thực chiến</p> <p >cầm tay chỉ việc</p>
+                    </div>
+                </div>
+                <div class="position-relative">
+                    <div class="d-flex">
+                        <div id="before"></div>
+                        <div id="hexagon"></div>
+                        <div id="after"></div>
+                    </div>
+                    <div class="position"><p>Tham gia dự án</p> <p>tập trận</p> <span class="hightlight"> MOCK PROJECT </span>
+                    </div>
+                </div>
+                <div class="position-relative">
+                    <div class="d-flex">
+                        <div id="before"></div>
+                        <div id="hexagon"></div>
+                        <div id="after"></div>
+                    </div>
+                    <div class="position"><span class="hightlight">CAM KẾT</span> việc làm ngay với mức thu nhập
+                        từ <span class="hightlight"> 8-12 TRIỆU</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="title">
+            <p>CHƯƠNG TRÌNH ĐÀO TẠO</p>
+        </div>
+        <div id="carouselExampleControl" class="carousel slide" data-ride="carousel">
+            <img id="khungctImage" src="assets/img/other-config/{{otherConfig.training_program_img}}" alt="Responsive image">
+        </div>
+
+    </div>
+    <div>
+        <div class="title">
+            <p>ĐỘI NGŨ MENTORS</p>
+        </div>
+        <div class="mentor-slider mt-5">
+          <app-mentors-slider imgclass="img-div1"></app-mentors-slider>
+        </div>
+    </div>
+    <div class="position-relative" (mouseleave)="scroll()">
+        <div class="title">
+            <p>DOANH NGHIỆP NÓI GÌ VỀ CHÚNG TÔI</p>
+        </div>
+        <app-enterprise></app-enterprise>
+    </div>
+    <div class="relative">
+        <div >
+            <img class="w-100" src="https://java.vtiacademy.edu.vn/wp-content/uploads/2020/02/section-backgroud-3.jpg">
+        </div>
+        <div class="count">
+            <p id="counter">1</p>
+            <p id="txt">{{listIntro[0].name.toUpperCase()}}</p>
+        </div>
+        <div class="count" id="count2">
+            <p id="counter2">1</p>
+            <P id="txt">{{listIntro[1].name.toUpperCase()}}</P>
+        </div>
+        <div class="count" id="count3">
+            <p id="counter3">1</p>
+            <p id="txt">{{listIntro[2].name.toUpperCase()}}</p>
+        </div>
+        <app-image-intro></app-image-intro>
+    </div>
+
+    <div class="divEvent">
+        <div class="title">
+            <p>SỰ KIỆN NỔI BẬT</p>
+        </div>
+        <div class="news row" *ngFor="let i of listNews">
+            <div class="col-sm-4 col-12 news-img">
+                <img src="../../../../assets/img/News-Event/{{i?.image}}" alt="" />
+            </div>
+            <div class="col-sm-8 col-12 news-content">
+                <div class="text">
+                    <div class="title1">{{ i?.title }}</div>
+                    <div class="main">{{ i?.shortDes }}</div>
+                    <div class="detail"><a href="/news/{{i?.id}}">Xem chi tiết >></a></div>
+                </div>
+            </div>
+       </div>
+    </div>
+
+</div>

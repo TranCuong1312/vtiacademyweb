@@ -1,0 +1,180 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2><b>Manage Mentor Review</b></h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
+                            <i class="material-icons">&#xE147;</i> 
+                            <span>Add New Mentor Review</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Reviewer Name</th>
+                        <th>Position</th>
+                        <th>Comment</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let review of listReviewMentors, let i = index">
+                        <td>{{(currentPage)*3+(i+1)}}</td>
+                        <td>{{review.reviewerName}}</td>
+                        <td>{{review.office}}</td>
+                        <td>{{review.content}}</td>
+                        <td>
+                            <div style="height: 100px; width: 100px; object-fit: cover;">
+                                <img src="../../../../../assets/img/Reviews/Chuyengia/{{review.image}}" alt=""
+                                    class="w-100 h-100" style="object-fit: cover;">
+                            </div>
+                        </td>
+                        <td>
+                            <button href="#editEmployeeModal" class="edit btn btn-outline-dark" data-toggle="modal">
+                                <i class="material-icons" data-toggle="tooltip" (click)='openEditForm(review)' title="Edit">&#xE254;</i>
+                            </button>
+                            <button href="#deleteEmployeeModal" class="delete btn btn-outline-danger" data-toggle="modal">
+                                <i class="material-icons" (click)='deleteReview(review.id)' data-toggle="tooltip" title="Delete">&#xE872;</i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div class="hint-text">Showing <b>{{getTotalRecordCurrentPage()}}</b> out of <b>{{totalRecord}}</b> entries</div>
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a (click)="getDataFromPreviousPage()" class="page-link">Previous</a>
+                    </li>
+                    <li *ngFor="let item of getListShowPage()">
+                         <button (click)="getDataFromCurrentPage(item)">{{item +1}}</button>
+                    </li>
+                    <li class="page-item">
+                        <a (click)="getDataFromNextPage()" class="page-link">Next</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Add Modal HTML -->
+    <div id="addEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form (ngSubmit)="addReview()" [formGroup]="addReviewForm">
+                    <div class="modal-header">
+                        <h4 class="modal-title">ADD MORE REVIEW MENTOR</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="closeAddForm()">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Reviewer Name</label>
+                            <input [formControlName]="'reviewerName'" type="text" class="form-control" required>
+                            <div *ngIf="addReviewForm.get('reviewerName')?.errors?.required && addReviewForm.get('reviewerName')?.touched"
+                                class="col alert alert-danger" role="alert">
+                                Please enter name of reviewer!
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Office</label>
+                            <input [formControlName]="'office'" type="text" class="form-control" required>
+                            <div *ngIf="addReviewForm.get('office')?.errors?.required && addReviewForm.get('office')?.touched"
+                                class="col alert alert-danger" role="alert">
+                                Please enter office of reviewer!
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Comment</label>
+                            <textarea [formControlName]="'content'" class="form-control" required></textarea>
+                            <div *ngIf="addReviewForm.get('content')?.errors?.required && addReviewForm.get('content')?.touched"
+                                class="col alert alert-danger" role="alert">
+                                Please enter content!
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <textarea [formControlName]="'image'" class="form-control" required></textarea>
+                            <input type = "file" accept="image/*" (change)="onSelectedFile($event)" required>
+                            <div *ngIf="addReviewForm.get('image')?.errors?.required && addReviewForm.get('image')?.touched"
+                                class="col alert alert-danger" role="alert">
+                                Please enter image of reviewer!
+                            </div>
+                            <div *ngIf="!file" class="text-danger">You need a picture</div>
+                            <div *ngIf="fileExists" class="alert-danger">File name already exists!</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" (click)="closeAddForm()">
+                        <input type="submit" [disabled]="addReviewForm.invalid || !file" class="btn btn-success" value="Add">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!-- Edit Modal HTML -->
+    <div id="editEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form (ngSubmit)="editReview()" [formGroup]="editReviewForm">
+                    <div class="modal-header">
+                        <h4 class="modal-title">EDIT REVIEW MENTOR</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input [formControlName]="'id'" type="text" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Reviewer Name</label>
+                            <input [formControlName]="'reviewerName'" type="text" class="form-control" required>
+                            <div *ngIf="editReviewForm.get('reviewerName')?.errors?.required && editReviewForm.get('reviewerName')?.touched"
+                                class="col alert alert-danger" role="alert">
+                                Please enter name of reviewer!
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Position</label>
+                            <textarea [formControlName]="'office'" class="form-control" required></textarea>
+                            <div *ngIf="editReviewForm.get('office')?.errors?.required && editReviewForm.get('office')?.touched"
+                                class="col alert alert-danger" role="alert">
+                                Please enter office of reviewer!
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Comment</label>
+                            <textarea [formControlName]="'content'" class="form-control" required></textarea>
+                            <div *ngIf="editReviewForm.get('content')?.errors?.required && editReviewForm.get('content')?.touched"
+                                class="col alert alert-danger" role="alert">
+                                Please enter content!
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <textarea [formControlName]="'image'" class="form-control" readonly></textarea>
+                            <input type = "file" accept="image/*" (change)="onSelectedFile($event)" >
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" [disabled]="editReviewForm.invalid" class="btn btn-info" value="Save">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

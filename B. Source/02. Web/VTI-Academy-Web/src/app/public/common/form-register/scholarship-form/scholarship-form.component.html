@@ -1,0 +1,41 @@
+<div class="{{formClass}}">
+  <div class="form-scholarship-wrapper {{review}}">
+    <h3>{{"Đăng ký test để nhận học bổng" | uppercase }}</h3>
+    <form [formGroup]="scholarForm" (ngSubmit)="onSubmit()" class="txt">
+      <p>{{ "Họ tên" | uppercase }}</p>
+      <input type="text" formControlName="name" required>
+      <div *ngIf="name.invalid && (name.dirty || name.touched || isSubmit)" class="error">
+        <span *ngIf="name.errors.required">
+          Name is required
+        </span>
+        <span *ngIf="name.errors.minlength">
+          Name must be at least 4 characters long.
+        </span>
+      </div>
+
+      <p>{{ 'Số điện thoại' | uppercase }}</p>
+      <input type="text" formControlName="phone" required>
+      <div *ngIf="phone.invalid && (phone.dirty || phone.touched || isSubmit)" class="error">
+        <span *ngIf="phone.errors.required">
+          Phone is required
+        </span>
+        <span *ngIf="phone.errors.pattern">
+          Phone must be number and 10 or 11 digits
+        </span>
+      </div>
+      
+      <p>{{ 'Email' | uppercase }}</p>
+      <input type="email" formControlName="email">
+      <div *ngIf="email.invalid && (email.dirty || email.touched || isSubmit)" class="error">
+        <span *ngIf="email.errors.required">
+          Email is required
+        </span>
+        <span *ngIf="email.errors.email">
+          Email invalid
+        </span>
+      </div>
+      <br>
+      <button class="btn" type="submit">Đăng Ký</button>
+    </form>
+  </div>
+</div>

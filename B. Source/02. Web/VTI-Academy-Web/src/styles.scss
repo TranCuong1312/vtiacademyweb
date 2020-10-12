@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/ngx-toastr/toastr.css";
+@font-face {
+  font-family: "UTM Avo";
+  font-style: normal;
+  font-weight: normal;
+  src: local("UTM Avo"),
+    url("/src/assets/utm-avo-cufonfonts-webfont/utm-avo.woff") format("woff");
+}
+
+@font-face {
+  font-family: "UTMAvoBold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("UTMAvoBold"),
+    url("/src/assets/utm-avo-cufonfonts-webfont/utm-avobold.woff")
+      format("woff");
+}
+
+body{
+  font-family: sans-serif;
+}

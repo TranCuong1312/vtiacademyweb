@@ -1,0 +1,45 @@
+<div class="experience-form container">
+  <div class="experience-form-wrapper">
+    <p>{{ 'Đăng ký học trải nghiệm' | uppercase }}</p>
+    <form [formGroup]="experienceForm">
+      <div class="row">
+        <div class="col-6">
+          <input type="text" formControlName="name" placeholder="Họ tên" class="form-control">
+          <div *ngIf="name.invalid && (name.dirty || name.touched || isSubmit)" class="error">
+            <span *ngIf="name.errors.required">
+              Name is required
+            </span>
+            <span *ngIf="name.errors.minlength">
+              Name must be at least 4 characters long.
+            </span>
+          </div>
+        </div>
+        <div class="col-6">
+          <input ty pe="text" formControlName="phone" placeholder="Số điện thoại" class="form-control">
+          <div *ngIf="phone.invalid && (phone.dirty || phone.touched || isSubmit)" class="error">
+            <span *ngIf="phone.errors.required">
+              Phone is required
+            </span>
+            <span *ngIf="phone.errors.pattern">
+              Phone must be number and 10 or 11 digits
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <input type="text" formControlName="email" placeholder="Email" class="form-control">
+          <div *ngIf="email.invalid && (email.dirty || email.touched || isSubmit)" class="error">
+            <span *ngIf="email.errors.required">
+              Email is required
+            </span>
+            <span *ngIf="email.errors.email">
+              Email is invalid!
+            </span>
+          </div>
+        </div>
+      </div>
+      <button class="btn" type="submit" (click)="onSubmit()">GỬI</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="2500" pause="false">
+    <div class="carousel-inner">
+        <div class="carousel-item {{i==0?'active':''}}" *ngFor="let company of listEnterprise; let i = index">
+            <div class="merge-text row">
+                <div class="slider-item text-center">
+                    <div class="slider-item-img w-100">
+                        <img class="img-fluid" src="../../../../assets/img/Enterprise/Images/{{company.image}}" alt="">
+                    </div>
+                    <div class="slider-item-content mx-auto w-50 ">
+                        <p> {{company.content}} </p>
+                        <img class="icon" src="../../../../assets/img/Enterprise/Icons/{{company.icon}} ">
+                        <span> - {{company.name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

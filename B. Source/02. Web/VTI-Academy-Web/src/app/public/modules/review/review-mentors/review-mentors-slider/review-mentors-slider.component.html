@@ -1,0 +1,26 @@
+<div class="body-carousel">
+    <div id="word-carousel" class="carousel slide d-flex justify-content-around align-items-center"
+        data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item {{i==0?'active':''}}" *ngFor="let mentor of listReview; let i = index">
+                <div class="above row">
+                    <div class="col-md-4 col-sm-12 image-review">
+                        <img class="d-block w-100 h-100"
+                        src="../../../../assets/img/Reviews/Chuyengia/{{mentor.image}}" alt="First slide">
+                    </div>
+                    <div class="col-md-8 col-sm-12 single-review">
+                        <div class="heading-review" >
+                            {{mentor.reviewerName}}
+                        </div>
+                        <div class="text-office" >
+                            {{mentor.office}}
+                        </div>
+                        <div class="text-review">
+                            {{mentor.content}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

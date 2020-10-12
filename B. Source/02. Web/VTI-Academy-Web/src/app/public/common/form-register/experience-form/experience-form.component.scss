@@ -1,0 +1,55 @@
+.experience-form {
+    width: 65vw;
+    height: 100%;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    padding: 3%;
+    & .experience-form-wrapper {
+        background-color: #9759A4;
+        color: white;
+        padding: 2vw;
+        & p {
+            font-weight: 700;
+            font-size: 2.1vw;
+            margin-bottom: 5%;
+        }
+        & form {
+            font-size: 1.3vw;
+            height: 18vw;
+            position: relative;
+            & .error {
+                color: red;
+                text-align: left;
+                font-size: 1.3vw;
+                font-weight: bolder;
+                font-style: italic;
+                position: absolute;
+                top: 80%;
+            }
+            & .form-control {
+                height: 4vw;
+                margin: 3% 0;
+                font-style: italic;
+                font-size: inherit;
+                padding: 2vw;
+            }
+            & button {
+                background-color: #10365b;
+                width: 8vw;
+                height: 3.5vw;
+                color: white;
+                font-size: 100%;
+                font-weight: bolder;
+                padding: 1%;
+            }
+        }
+        @media screen and (max-width: 786px) {
+            & p {
+                font-size: 3vw;
+            }
+            & form {
+                font-size: 2vw;
+            }
+        }
+    }
+}

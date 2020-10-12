@@ -1,0 +1,311 @@
+.container-all {
+    background-color: #f8f9fa !important;
+    padding-left: -15px;
+    padding-right: -15px;
+    & .scholar-form {
+        position: fixed;
+        z-index: 1000;
+        top: 25%;
+        width: 450px;
+        & .close {
+            background-color: rgba(255, 255, 255, 1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid black;
+            font-size: 30px;
+        }
+    }
+    & .title {
+        background-color: #10365b;
+        width: 40%;
+        margin: 0 auto;
+        margin-top: 6%;
+        text-align: center;
+        color: white;
+        font-weight: bolder;
+        font-size: 2vw;
+        margin-bottom: 4%;
+        & p {
+            margin: 0 auto;
+        }
+    }
+    & .strength {
+        & .content {
+            font-size: 1.55vw;
+            font-weight: 500;
+            color: white;
+            & .up {
+                width: 43.1%;
+                margin: 0 auto;
+                margin-bottom: 3%;
+            }
+            & .down {
+                width: 66%;
+                margin: 0 auto;
+            }
+            & .position-relative {
+                #hexagon {
+                    width: 18vw;
+                    height: 14vw;
+                    background: #f6a029;
+                    box-shadow: 0.8vw 0.2vw 0.75vw #9f9e9e;
+                }
+                
+                #before {
+                    width: 0;
+                    height: 14vw;
+                    border-top: 6vw solid transparent;
+                    border-right: 2.5vw solid #f6a029;
+                    border-bottom: 6vw solid transparent;
+                }
+                
+                #after {
+                    width: 0;
+                    height: 14vw;
+                    border-top: 6vw solid transparent;
+                    border-left: 2.5vw solid #f6a029;
+                    border-bottom: 6vw solid transparent;
+                    filter: drop-shadow(0.6vw 0.25vw 0.32vw #9f9e9e);
+                    padding-right: 15%;
+                }
+            }
+            & .position-relative:hover {
+                #hexagon {
+                    width: 15vw;
+                    height: 13vw;
+                    background: #f6a029;
+                    box-shadow: 0.8vw 0.2vw 0.75vw #9f9e9e;
+                }
+                #before {
+                    width: 0;
+                    height: 0;
+                    border-top: 6.5vw solid transparent;
+                    border-right: 2.5vw solid #f6a029;
+                    border-bottom: 6.5vw solid transparent;
+                }
+                #after {
+                    width: 0;
+                    height: 0;
+                    border-top: 6.5vw solid transparent;
+                    border-left: 2.5vw solid #f6a029;
+                    border-bottom: 6.5vw solid transparent;
+                    filter: drop-shadow(0.6vw 0.25vw 0.32vw #9f9e9e);
+                    padding-right: 2.5vw;
+                }
+                & .position {
+                    font-size: 1.7vw;
+                    width: 15vw;
+                    text-shadow: 2px 2px 3px #6c757d;
+                }
+            }
+            & .up {
+                & .position {
+                    text-align: center;
+                    position: absolute;
+                    width: 14vw;
+                    height: 10vw;
+                    left: 2.5vw;
+                    top: 2vw;
+
+                    & p {
+                        margin-bottom: 0 !important;
+                    }
+                }
+            }
+            & .down {
+                & .position {
+                    text-align: center;
+                    position: absolute;
+                    width: 14vw;
+                    height: 10vw;
+                    left: 2.5vw;
+                    top: 2vw;
+
+                    & p {
+                        margin-bottom: 0 !important;
+                    }
+                }
+            }
+            & .hightlight {
+                color: #38425b;
+                font-size: 1.8vw;
+                text-align: center;
+            }
+
+            & .fixMargin{
+                margin-top: 0.6vw;
+            }
+        }
+    }
+
+    & .divEvent {
+        padding-bottom: 4px;
+        & .news {
+            margin: 0 11.5%;
+            width: 70vw;
+            height: auto;
+            box-sizing: border-box;
+            position: relative;
+            margin-top: 3vw;
+            margin-bottom: 4vw;
+            & .news-img { 
+                text-align: center;
+                & img {
+                    border-radius: 50%;
+                    width: 18.5vw;
+                    height: 18.5vw;
+                    object-fit: cover;
+                    border: 0.5vw solid #ddeaf2;
+                }               
+            }
+            & .news-content {
+                & .text {
+                    & .title1 {
+                        // width: 50vw;
+                        text-align: center;
+                        font-size: 19px;
+                        font-family: sans-serif;
+                        font-weight: 700;
+                        padding-top: 0.5%;
+                        padding-bottom: 0px;
+                        margin: 0px auto;
+                    }              
+                    & .main {
+                        text-align: justify;
+                        // width: 51.3vw;
+                        font-size: 16px;
+                        padding-top: 2%;
+                        margin: 0px auto;
+          
+                        overflow: hidden;             
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 5; /* number of lines to show */
+                        -webkit-box-orient: vertical;
+                        
+                    }
+                    & .detail {
+                        font-size: 15px;
+                        font-style: italic;
+                        padding-top: 6%;
+                        & a {
+                            color: orange;
+                        }
+                    }
+                }    
+            }
+          
+        }
+    }
+    
+    & .relative {
+        position: relative;
+        margin-top: 3%;
+        & .count {
+            position: absolute;
+            height: 20%;
+            width: 16%;
+            left: 14.3%;
+            bottom: 63%;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 5vw;
+            border-bottom: 2px solid white;
+            & #counter {
+                color: yellow;
+                margin-bottom: 6px;
+                font-size: 70%;
+            }
+            
+            & #counter2 {
+                margin-bottom: 6px;
+                font-size: 70%;
+            }
+            
+            & #counter3 {
+                margin-bottom: 6px;
+                font-size: 70%;
+            }
+            & #txt {
+                font-size: 30%;
+                color: white;
+                margin-top: 2.5vw;
+            }
+        }   
+        & #count2 {
+            left: 43%;
+            color: yellow;
+        }
+        
+        & #count3 {
+            left: 71%;
+            color: yellow;
+        }
+    }
+    & #carouselExampleControl {
+        text-align: center;
+        & #khungctImage {
+            width: 50%;
+            display: inline-block;  
+        }
+    }
+}
+
+@media only screen and (max-width: 575px){
+    .news {
+      width: 80%;
+      & .col-12 {
+        width: 38vw;
+        & img {
+          width: 180px !important;
+          height: 180px !important;
+          margin-top: 5%;
+          margin-bottom: 5%;
+        }
+        & .text {
+          & .title1 { 
+            width: 90%;     
+            text-align: center;   
+            font-size: 14px !important;          
+            padding-top: 4%;
+          } 
+          & .main {
+            width: 100%;
+            // text-align: ;
+            padding-bottom: 0%;
+            font-size: 13px !important;
+          }
+          & .detail {
+            font-size: 12px !important;
+            padding-top: 4%;        
+        }
+        }
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 575px){
+    .container-all {      
+        & .title {         
+            font-size: 14px;      
+            width: 60%;     
+        }
+    }
+}
+
+@media only screen and (max-width: 575px){
+    .relative {
+        & .count {
+            & #txt {
+                font-size: 9px !important;
+            }
+        }   
+    }
+    #carouselExampleControl {
+        & #khungctImage {
+            width: 75% !important;
+            display: inline-block;  
+        }
+    }
+}

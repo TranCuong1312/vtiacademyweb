@@ -1,0 +1,36 @@
+image: git.vti.com.vn:15000/vti/gitlab-sonar-runner:gradle
+
+before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+
+cache:
+  paths:
+     - .gradle/caches
+ 
+stages:
+  - review
+
+sonarqube-master:
+  stage: review
+  variables:
+    SONAR_URL: https://sonar.vti.com.vn
+    SONAR_TOKEN: $SONAR_TOKEN
+    SONAR_ANALYSIS_MODE: publish
+  only:
+    - master
+  script:
+    - gradle build
+    - gitlab-sonar-scanner -Dsonar.projectKey=$CI_PROJECT_NAMESPACE:$CI_PROJECT_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_PATH
+
+sonarqube-feature-branch:
+  stage: review
+  variables:
+    SONAR_URL: https://sonar.vti.com.vn
+    SONAR_TOKEN: $SONAR_TOKEN
+    SONAR_ANALYSIS_MODE: preview
+  allow_failure: true
+  except:
+    - master
+  script:
+    - gradle build
+    - gitlab-sonar-scanner -Dsonar.projectKey=$CI_PROJECT_NAMESPACE:$CI_PROJECT_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_PATH -Dsonar.gitlab.commit_sha=$CI_COMMIT_REF -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME

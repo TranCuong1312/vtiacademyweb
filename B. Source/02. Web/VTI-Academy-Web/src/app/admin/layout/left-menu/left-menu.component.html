@@ -1,0 +1,96 @@
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>VTI Academy</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>Hello Admin</p>
+            <li>
+                <a class="nav-link" [routerLink]="['/admin/mainbanner']" routerLinkActive="active2">Main Banner</a>
+            </li>
+            <li>
+                <a class="nav-link" [routerLink]="['/admin/about']" routerLinkActive="active2">About Us</a>
+            </li>
+            <li>
+               <!-- Navbar brand -->
+                <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent1">Course</a>
+                <!-- Collapse button -->
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto">
+                        <li>
+                            <a class="nav-link" [routerLink]="['/admin/course']" routerLinkActive="active2">Course</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin/subcourse']">SubCourse</a>
+                        </li>
+                    </ul>
+                    <!-- Links -->
+
+                </div>
+                <!-- Collapsible content -->
+
+            </li>
+            <!--/.Navbar-->
+
+            <li>
+                <a class="nav-link" [routerLink]="['/admin/mentor']" routerLinkActive="active2">Mentor</a>
+            </li>
+
+            <!--/.Navbar-->
+
+            <li>
+                <a class="nav-link" [routerLink]="['/admin/enterprise']" routerLinkActive="active2">Enterprise</a>
+            </li>
+            <!--Navbar-->
+            <li>
+
+                <!-- Navbar brand -->
+                <a class="nav-link" data-toggle="collapse" data-target="#navbarSupportedContent2">Reviews
+                </a>
+                <!-- Collapse button -->
+
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto">
+                        <li>
+                            <a hreclass="nav-link" [routerLink]="['/admin/reviews/student']" routerLinkActive="active2">Reviews Student</a>
+                        </li>
+                        <li>
+                            <a hreclass="nav-link" [routerLink]="['/admin/reviews/mentor']" routerLinkActive="active2">Reviews Mentor</a>
+                        </li>
+                    </ul>
+                    <!-- Links -->
+
+                </div>
+                <!-- Collapsible content -->
+
+            </li>
+            <!--/.Navbar-->
+
+            <li>
+                <a class="nav-link" [routerLink]="['/admin/news']" routerLinkActive="active2">News</a>
+            </li>
+            <li>
+                <a class="nav-link" [routerLink]="['/admin/contact']" routerLinkActive="active2">Contacts</a>
+            </li>
+
+            <li>
+                <a class="nav-link" [routerLink]="['/admin/otherconfig']" routerLinkActive="active2">Other Config</a>
+            </li>
+
+            <li>
+                <a style="cursor: pointer;" (click)="logout()">Log out</a>
+            </li>
+        </ul>
+
+
+    </nav>
+
+</div>

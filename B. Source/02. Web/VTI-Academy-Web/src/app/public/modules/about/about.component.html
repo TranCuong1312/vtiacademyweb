@@ -1,0 +1,53 @@
+<div>
+    <img src="../../../../assets/img/main-Banner/about-us-baner.png" class="img-fluid banner"
+        alt="Responsive image">
+</div>
+<div class="aboutus-name">
+    <h1><b>VTI ACADEMY</b></h1>
+</div>
+<div class="aboutus-description" [innerHTML]="about?.description"></div>
+
+<div class="row">
+    <div class="col-sm-6 col-12">
+        <img src="../../../../assets/img/aboutus/sumenh.png"/>
+    </div>
+    <div class="col-sm-6 col-12">                    
+        <h3><b>Sứ mệnh</b></h3>
+        <div>Chúng tôi cung cấp các giải pháp đào tạo và phát triển nguồn nhân lực chất lượng cao cho thị trường công nghệ thông tin trong nước và quốc tế.</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6 col-12">
+        <img src="../../../../assets/img/aboutus/tamnhin.png"/>
+    </div>
+    <div class="col-sm-6 col-12">                    
+        <h3><b>Tầm nhìn</b></h3>
+        <div>Với tầm nhìn sẽ trở thành học viện đào tạo hàng đầu cho sinh viên và các đối tác. Chúng tôi luôn đi đầu áp dụng công nghệ hiện đại, phương pháp đào tạo đa dạng cho từng khách hàng. Lấy tri thức là nền tảng cho sự phát triển bền vững chúng tôi luôn luôn thay đổi nội dung đáp ứng nhanh nhất nhu cầu doanh nghiệp trong nước và quốc tế.</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6 col-12">
+        <img src="../../../../assets/img/aboutus/hochieu.png"/>
+    </div>
+    <div class="col-sm-6 col-12">                    
+        <h3><b>Hộ chiếu</b></h3>
+        <div>Học viên sẽ được nhận Giấy thông hành để được tiếp nhận tại các công ty là đối tác của chúng tôi về Công nghệ thông tin hàng đầu Việt Nam và Nhật Bản.</div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-6 col-12">
+        <h3><b>{{about?.titleVideo}}</b></h3>
+        <div class="text-intro-description" [innerHTML]="about?.descriptionVideo">
+        </div>
+
+    </div>
+    <div class="col-sm-6 col-12">
+        <iframe 
+            class="intro-video" 
+            [src]="video" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+</div>
+

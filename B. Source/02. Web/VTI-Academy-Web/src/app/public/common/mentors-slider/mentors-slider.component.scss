@@ -1,0 +1,160 @@
+.mentors-slider {
+    width: 78%;
+    margin: 0 auto;
+    & #word-carousel {
+        & .carousel-inner {
+            width: 100%;
+            margin-left: 0.7%;
+            & .carousel-item {
+                & .card {
+                    background-color: rgb(250, 250, 250);
+                    border: none;
+                    text-align: center;
+                    & .card-img {
+                        margin: 0 auto;
+                        & .card-img-top {
+                            display: inline-block;
+                            margin: 0 auto;
+                            width: 20vw;
+                            height: 20vw;
+                            object-fit: cover;
+                            border-radius: 50%;
+                        }
+                    }
+                    & .card-body {
+                        & .card-text {
+                            font-size: 85%;
+                        }
+
+                        & .card-title {
+                            color: #0f355b;
+                            font-size: 85%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 800px) {
+    .mentors-slider .carousel-inner .carousel-item-right.active,
+    .mentors-slider .carousel-inner .carousel-item-next {
+        transform: translateX(50%);
+    }
+    .mentors-slider .carousel-inner .carousel-item-left.active,
+    .mentors-slider .carousel-inner .carousel-item-prev {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 800px) {
+    .mentors-slider .carousel-inner .carousel-item>div {
+        display: none;
+    }
+    .mentors-slider .carousel-inner .carousel-item>div:first-child {
+        display: block;
+    }
+}
+
+/* large - display 3 */
+
+@media (min-width: 992px) {
+    .mentors-slider .carousel-inner .carousel-item-right.active,
+    .mentors-slider .carousel-inner .carousel-item-next {
+        transform: translateX(33%);
+    }
+    .mentors-slider .carousel-inner .carousel-item-left.active,
+    .mentors-slider .carousel-inner .carousel-item-prev {
+        transform: translateX(-40%);
+    }
+}
+
+.mentors-slider .carousel-inner .carousel-item.active,
+.mentors-slider .carousel-inner .carousel-item-next,
+.mentors-slider .carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+.mentors-slider .carousel-inner .carousel-item-right,
+.mentors-slider .carousel-inner .carousel-item-left {
+    transform: translateX(0);
+}
+
+
+
+.carousel-control-prev, .carousel-control-next {
+    position: inherit;
+    width: 6%;
+    & span {
+        margin: 0% 0% 150% 0%;
+    }
+    & .prev-icon {
+        & img {
+            float: left;
+            width: 30%;
+            margin-left: 42px;
+        }
+    }
+    & .next-icon {
+        & img {
+            float: right;
+            width: 30%;
+            margin-right: 32px;
+        }
+    }
+}
+
+
+//     .carousel-control-next{
+//         display: none;
+//     }
+    
+//     .carousel-control-prev{
+//         display: none;
+//     }
+// }
+
+  
+@media only screen and (max-width: 575px){
+    .mentors-slider {
+        & #word-carousel {
+            & .carousel-inner {
+                & .carousel-item {
+                    & .card {
+                        & .card-img {                     
+                            & .card-img-top {
+                                // display: inline-block;
+                                // margin: 0 auto;
+                                width: 200px !important;
+                                height: 200px !important;
+                                // object-fit: cover;
+                                // border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .carousel-control-prev, .carousel-control-next {
+        width: 6%;
+        & .prev-icon {
+            & img {
+                float: left;
+                width: 40%;
+                margin-left: 20px;
+                padding-bottom: 400%;
+            }
+        }
+        & .next-icon {
+            & img {
+                float: right;
+                width: 40%;
+                margin-right: 20px;
+                padding-bottom: 400%;
+            }
+        }
+    }
+    
+              
+}

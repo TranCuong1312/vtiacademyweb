@@ -1,0 +1,30 @@
+<div class="mentors-slider">
+    <div id="word-carousel" class="carousel slide d-flex justify-content-around align-items-center"
+    data-ride="carousel">
+        <a class="carousel-control-prev align-self-stretch" href="#word-carousel" role="button" data-slide="prev">
+            <span class="prev-icon" aria-hidden="true"> <img src="../../../../../../assets/icon/arrowL.png" alt=""></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item {{ i== 0 ? ' active' : '' }}" *ngFor="let mentor of listMentor; let i = index">
+                <div class="col-lg-4 col-md-6 carousel-item-wrapper">
+                    <div class="card d-flex justify-content-center">
+                        <div class="card-img">
+                            <img class="card-img-top" src="../../../../assets/img/mentors/{{mentor.img}}" alt="Card image cap" />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center font-weight-bolder">{{mentor.name}}</h5>
+                            <p class="card-text text-center">
+                                {{mentor.position}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-next align-self-stretch" href="#word-carousel" role="button" data-slide="next">
+            <span class="next-icon" aria-hidden="true"> <img src="../../../../../../assets/icon/arrowR.png" alt=""></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>

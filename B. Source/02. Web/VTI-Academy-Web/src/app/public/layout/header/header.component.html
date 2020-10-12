@@ -1,0 +1,119 @@
+<div class="header w-95 h-auto container-fluid">
+  <div class="d-flex bd-highlight contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 phone-cover">
+          <div class="phone bd-highlight">
+            <i class="fas fa-phone-alt"></i> (+84) {{contact?.phone}}
+          </div>
+        </div>
+        <div class="col email-cover">
+          <div class="email bd-highlight">
+            <i class="fas fa-envelope"></i> {{contact?.email}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="social d-flex ml-auto bd-highlight row">
+        <div class="facebook col-1 col-lg-4"><a href="{{contact?.facebook}}" target="blank"><i class="fab fa-facebook-f"></i></a></div>
+        <div class="twitter col-1 col-lg-4"><a href="{{contact?.facebook}}" target="blank"><i class="fab fa-twitter"></i></a></div>
+        <div class="google col-1 col-lg-4"><a href="{{contact?.facebook}}" target="blank"><i class="fab fa-google-plus-g"></i></a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu bg-light w-100 navbar-expand-xl" id="menu">
+    <nav class="navbar navbar-expand-xl navbar-light">
+      <div class="container logo-img">
+        <a class="navbar-brand" [routerLink]="['/home']">
+          <div class="logo">
+            <img src="assets/img/logo/[LOGO]VTIACADEMY-01.png" alt="Anh to" />
+          </div>
+        </a>
+      </div>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse menu-item" id="navbarNav">
+        <div class="main-menu d-flex justify-content-lg-center">
+        <ul class="navbar-nav container">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">
+              <div>Trang chủ</div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/about-us']" routerLinkActive="active">
+              <div>Về chúng tôi</div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/courses']" routerLinkActive="active">
+              <div>Khóa học</div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/reviews/mentor']" routerLinkActive="active">
+              <div>Chuyên gia</div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/reviews/business']" routerLinkActive="active">
+              <div>Đào tạo doanh nghiệp</div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/reviews/student']" routerLinkActive="active">
+              <div>Học viên chia sẻ</div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/news']" routerLinkActive="active">
+              <div class="last-item">Tin tức - Sự kiện</div>
+            </a>
+          </li>
+          <!-- <li [ngClass]="['nav-item',isLoggedIn ? 'hidden' : '']">
+            <a class="nav-link"  [routerLink]="['/login']" routerLinkActive="active">
+              <div>Sign in</div>
+            </a>
+          </li> -->
+          <li [ngClass]="['nav-item div1',isLoggedIn ? '' : 'hidden']">
+            <div class="dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                {{username}}
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" [routerLink]="['/']">My Account</a>
+                  <a class="dropdown-item" (click)="logout()">Logout</a>
+                </div>
+                <ng-container *ngIf="isClickLogout">
+                  <div class="spinner-border text-secondary" style="width: 1.5rem; height: 1.5rem;" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+              </ng-container>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+  </div>
+</div>

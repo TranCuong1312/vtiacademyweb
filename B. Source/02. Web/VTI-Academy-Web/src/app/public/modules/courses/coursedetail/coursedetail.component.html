@@ -1,0 +1,54 @@
+<div class="coursedetail">
+    <div class="banner">
+        <img src="../../../../assets/img/course_img/{{course?.img}}" class="img-fluid">
+    </div>
+    <div class="content mx-auto text-center">
+        <!-- <div class="outcome">
+            <div class="outcome-title">
+                <h2 class="font-weight-bolder">GIÁ TRỊ NHẬN ĐƯỢC SAU KHÓA HỌC</h2>
+            </div>
+            <div class="row mx-auto text-left outcome-table w-75" *ngFor="let item of courseOutcomes;let i = index">
+                <div class="id-outcome col-1 p-2 text-center pt-3 pb-3 font-weight-bolder">{{i+1}}</div>
+                <div class="name-outcome col-11 p-4 pt-3 pb-3 font-weight-bolder">{{item.name}}</div>
+            </div>
+        </div> -->
+        <div class="intro">
+            <div class="title-intro">
+                <h2 class="title-text">GIỚI THIỆU VỀ CHƯƠNG TRÌNH</h2>
+            </div>
+            <div class="intro-content">
+                <p class="text-justify text-intro ">{{course?.intro}}</p>
+            </div>
+        </div>
+        <div class="curriculum w-75 mx-auto">
+            <div class="curriculum-title ">
+                <h2 class="title-text">KHUNG CHƯƠNG TRÌNH</h2>
+            </div>
+            <div class="curriculum-img">
+                <img src="../../../../assets/img/main-Banner/Khung chuong trinh.jpg" class="img-fluid anhbanner">
+            </div>
+        </div>
+        <div class="subcourse-title">
+            <h2 class="title-text">NỘI DUNG KHÓA HỌC</h2>
+        </div>
+        <div class="subcourse">
+            <!-- <div class="p-3"></div> -->
+            <div class="container subcourse-table">
+                <div class="row subcourse-body">
+                    <div class="col-md-4 col-5 subcourse-name">
+                        <div class="row" *ngFor="let item of subCourses;let i = index" (click)='onClick(i)'>
+                            <div class="hover" [innerHTML]="item?.name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-7 subcourse-content text-left" [innerHTML]="subcourse">
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="p-3"></div> -->
+        </div>
+        <div>
+            <app-experience-form [course]="id"></app-experience-form>
+        </div>
+    </div>
+</div>

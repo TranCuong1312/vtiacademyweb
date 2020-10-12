@@ -1,0 +1,48 @@
+.reivew-business {
+    padding: 0;
+}
+
+h1 {
+    color: #24415d;
+    font-size: 2.5vw;
+}
+
+#text-business-training {
+    margin: 0% 13% 5% 14%;
+    text-align: justify;
+    font-size: 1.5vw;
+}
+
+.merge-text {
+    & .slider-item {
+        position: relative;
+        height: 30vw;
+        width: 100%;
+        object-fit: cover;
+        & .slider-item-img {
+            & img {
+                width: 100%;
+            }
+        }
+        & .slider-item-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            z-index: 10;
+            padding: 5px;
+            & p {
+                font-size: 1.7vw;
+                margin-bottom: 3%;
+            }
+            & span {
+                font-size: 1.4vw;
+            }
+        }
+        & .icon {
+            width: 4vw;
+        }
+    }
+}
+

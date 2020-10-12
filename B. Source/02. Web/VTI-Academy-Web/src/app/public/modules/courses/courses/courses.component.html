@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="courses row">
+        <div *ngFor="let c of courses" class="card col-lg-4 col-md-6 col-sm-6">
+            <div class="title h-25 mx-auto p-2">
+                <p class="card-title text-justify text-uppercase text-center font-weight-bolder">{{c.name}}</p>
+            </div>
+            <div class="image mt-3">
+                <img src="../../../../../assets/img/course_img/{{c.img}}" class="card-img-top" alt="c.title">
+            </div>
+            <div [ngSwitch]="c.id" class="card-body mx-auto">
+                <div *ngSwitchDefault>
+                    <a [routerLink]="[c.id]" target="_blank" class="btn btn-warning text-dark font-weight-bolder font-italic">Tìm hiểu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

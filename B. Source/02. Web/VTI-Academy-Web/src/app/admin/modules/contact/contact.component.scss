@@ -1,0 +1,53 @@
+.container {
+  color: #566787;
+  height: 800px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 13px;
+  float: right;
+  width: 85%;
+}
+
+.table-wrapper {
+  background: #fff;
+  padding: 0%;
+  margin: 2% 1%;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.table-title {
+  padding-bottom: 2%;
+  background: #435d7d;
+  color: #fff;
+  padding: 0.8vw 1.5vw;
+  border-radius: 3px 3px 0 0;
+}
+
+.column-thead {
+  text-align: center;
+  font-weight: bold;
+  width: 27.5%;
+}
+  
+  .table-title .btn {
+    color: #fff;
+    float: right;
+    font-size: 13px;
+    border: none;
+    min-width: 50px;
+    border-radius: 2px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+  }
+  
+  .table-title .btn i {
+    float: left;
+    font-size: 21px;
+    margin-right: 5px;
+  }
+
+  a {
+    cursor: pointer;
+    color: #566787 !important;
+  }

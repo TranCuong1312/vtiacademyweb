@@ -1,0 +1,66 @@
+.banner1 {
+    width: 100%;
+    height: auto;
+}
+
+.mentor-name-text-1 {
+    background-color: #0f355b;
+    width: 30%;
+    margin: 25px auto;
+    & .text {
+        line-height: 3vw;
+        font-size: 2vw;
+        text-align: center;
+        color: whitesmoke;
+    }
+}
+
+.mentor-name-text-2 {
+    background-color: #0f355b;
+    width: 70%;
+    margin: 25px auto;
+    & .text {
+        line-height: 3vw;
+        font-size: 2vw;
+        text-align: center;
+        color: whitesmoke;
+    }
+}
+
+.mentor-name-2 {
+    margin-top: 100px;
+}
+
+.container-mentor {
+    padding: 3vw 12vw 3vw 13vw;
+}
+
+.student-share-name {
+    margin-top: 5vw;
+    margin-left: 30.5%;
+    margin-bottom: 5vw;
+    width: 40%;
+    text-align: center;
+    background-color: #10365b;
+    padding-top: 0.2vw;
+    & h1 {
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 140%;
+    }
+  }
+
+  .student-share-name2 {
+    margin-top: 5vw;
+    margin-left: 19.5%;
+    margin-bottom: 5vw;
+    width: 60%;
+    text-align: center;
+    background-color: #10365b;
+    padding-top: 0.2vw;
+    & h1 {
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 140%;
+    }
+  }

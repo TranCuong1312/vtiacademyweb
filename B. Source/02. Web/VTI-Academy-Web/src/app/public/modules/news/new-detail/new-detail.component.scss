@@ -1,0 +1,120 @@
+.container-news {
+  text-align: center;
+  .news {
+    padding: 3vw 12.8vw 3vw 13.8vw;
+    & .image {
+      & img{
+        width: 100%;
+      }
+    }
+    & .title {
+      font-family: sans-serif;
+      margin-top: 50px;
+      font-size: 35px;
+      font-weight: 700;
+      color: black;
+    }
+    & .img-icon {
+      height: 30px;
+      margin: 50px 0;
+    }
+    & .description {
+      font-size: 16px;
+      text-align: justify;
+    }
+    & .date {
+      text-align: left;
+      padding-top: 3px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid #eae9e9;
+      margin-bottom: 50px;
+      & i {
+        font-size: 20px;
+        color: gray;
+        margin-right: 10px;
+      }
+    }
+    & .news-others {
+      text-align: left;
+      margin-bottom: 50px;
+
+      & .card {
+        box-shadow: 2px 2px 10px 0.2px #888888;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 450px;
+        & a {
+          text-decoration: none;
+          & .image {
+            & img {
+              object-fit: cover;
+              width: 100%;
+              height: 212px;
+            }
+          }
+          & .card-body {
+            & .card-date {
+              font-size: 14px;
+              color: #483f3f;
+            }
+            & .card-title {
+              color: #0472ad;
+              font-size: 18px;
+              height: 7vw;
+            }
+            & .card-text {
+              color: gray;
+              font-size: 14px;
+              border-top: 1px solid #777777;
+              width: 40%;
+              padding: 5px 0;
+              margin-top: 20px;
+              margin-bottom: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 980px) {
+  .container-fluid {
+    & .news {
+      width: 600px;
+      & .image{
+        width: 100%;
+        & img {
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+        }
+      }
+      & .title {
+        margin-top: 40px;
+        font-size: 30px;
+        font-weight: 750;
+        color: black;
+      }
+      & .img-icon {
+        height: 26px;
+        margin: 45px 0;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 650px) {
+  .container-fluid {
+    & .news {
+      width: 400px;
+      & .image{
+        width: 100%;
+        & img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,168 @@
+$marginTop : 7%;
+$marginBottom : 5%;
+
+.loginAdmin{
+    $marginTop : 12%!important;
+    $marginBottom : 0%!important;
+    margin-top: $marginTop;
+    margin-bottom: $marginBottom;
+}
+
+.container-fluid{
+    & .card{
+        margin: 0px auto;
+        margin-top: $marginTop;
+        margin-bottom: $marginBottom;
+        width: 26%;
+        box-shadow: 5px 10px 18px #888888;
+    }
+    & .card-header{
+        color: #324868;
+        background-color: #F8F9FA;
+       
+    }
+    
+}
+
+div{
+    & input{
+        transition: 0.5s;
+    }
+    & input:hover{
+        transform: scale(1.02);
+    }
+    & input:focus{
+        border: 2px solid  #7a95bd;
+        box-shadow: 0 0 0 0.2rem rgba(255,255,255,.25);
+    }
+    & .check-input-email{
+        & .form-control.ng-touched{
+            border: 2px solid #74A657;
+        }
+        & .form-control.ng-touched.ng-invalid{
+            border: 2px solid red;
+        }
+    }
+    & .invalid-input{
+        color: red;
+        font-size: 14px;
+        margin-right: 16%;
+        .errorLogin {
+            font-size: 16px;
+            
+        }
+    }
+}
+
+.modal {
+    & .modal-header{
+        color: #324868;
+        background-color: #F8F9FA;
+    }
+}
+
+.position-login{
+    float: right;
+}
+
+.btn.btn-outline-dark:hover{
+    background-color: #324868;
+}
+
+.btn.btn-outline-warning:hover{
+    background-color: #FFA500;
+    border-color: #FFA500;
+}
+
+.btn.btn-outline-warning{
+    border-color: #FFA500;
+}
+
+.btn.btn-outline-dark:hover:disabled{
+    background-color: white;
+}
+
+.btn.btn-link {
+    color: #324868;
+}
+
+
+
+
+
+
+@media only screen and(max-width : 1727px){
+    .container-fluid{
+        & .invalid-input{
+            // color: red;
+            font-size: 10px;
+            
+            .errorLogin {
+                position: absolute;
+                left: 7%;
+                bottom: 0%;
+            }
+        }
+    }
+}
+
+@media only screen and(max-width : 1635px){
+    .container-fluid{
+        & .card{
+            margin-top: $marginTop;
+            width: 32%;
+            box-shadow: 5px 10px 18px #888888;
+        }
+       
+    }
+}
+
+@media only screen and(max-width : 1040px){
+    .container-fluid{
+        & .card{
+            margin-top: $marginTop;
+            width: 35%;
+        }
+       
+    }
+}
+
+@media only screen and(max-width : 900px){
+    .container-fluid{
+        & .card{
+            margin-top: $marginTop;
+            width: 40%;
+        }
+       
+    }
+}
+
+@media only screen and(max-width : 800px){
+    .container-fluid{
+        & .card{
+            margin-top: $marginTop;
+            width: 45%;
+        }
+       
+    }
+}
+
+@media only screen and(max-width : 700px){
+    .container-fluid{
+        & .card{
+            margin-top:  10%;
+            width: 50%;
+        }
+       
+    }
+}
+
+@media only screen and(max-width : 660px){
+    .container-fluid{
+        & .card{
+            margin-top:  10.5%;
+            width: 60%;
+        }
+       
+    }
+}

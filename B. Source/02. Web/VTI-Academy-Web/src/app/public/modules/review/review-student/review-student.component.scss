@@ -1,0 +1,160 @@
+.student-share-name {
+  margin-top: 5vw;
+  margin-left: 30.5%;
+  margin-bottom: 5vw;
+  width: 40%;
+  text-align: center;
+  background-color: #10365b;
+  padding-top: 0.2vw;
+  & h1 {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 140%;
+  }
+}
+
+.body-carousel {
+  padding: 0 12%;
+  & .carousel {
+    height: fit-content;
+    padding: 4vw 0;
+    & .carousel-control-prev,
+    .carousel-control-next {
+      position: inherit;
+      & .next-icon,
+      .prev-icon {
+        & img {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+.carousel-inner {
+  & .carousel-item {
+    & .above {
+      height: 20vw;
+      & .image-review {
+        padding-left: 3%;
+      }
+      & .single-review {
+        text-align: justify;
+        //height: 20vw;
+        margin: auto 0;
+        padding-left: 8%;
+        & .heading-review {
+          font-size: 1.8vw;
+          font-weight: bold;
+          color: #107cbc;
+        }
+        & .text-office {
+          font-size: 1.5vw;
+        }
+        & .text-review {
+          font-style: italic;
+          font-size: 1.3vw;
+          // font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.form-body {
+  margin-top: 5vw;
+  width: 30%;
+  margin-left: 35%;
+}
+
+.carousel-control-next{
+  width: 5%;
+  margin-left: 4%;
+  margin-right: 0.4%;
+}
+
+.carousel-control-prev{
+  width: 5%;
+  margin-right: 4%;
+  margin-left: 1.8%;
+}
+
+@media only screen and (max-width: 1100px) {
+  .form-body{
+    margin-left: 27%;
+    width: 46%;
+  }
+}
+@media only screen and (max-width: 980px) {
+  .form-body{
+    margin-left: 27%;
+    width: 46%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .body-carousel {
+    & #word-carousel {
+      & .carousel-inner {
+        & .carousel-item {
+          & .above {
+            height: 550px;
+            & .image-review {
+              & .w-100{
+                width: 50% !important;
+                margin-left: 26%;
+              }
+              & .h-100{
+                width: 50% !important;
+              }
+            }
+            & .single-review {
+              //height: 20vw;
+              margin: 8% 0;
+              padding-left: 5%;
+              & .heading-review {
+                font-size: 18px;
+                font-weight: bold;
+                color: #107cbc;
+              }
+              & .text-office {
+                font-size: 16px;
+              }
+              & .text-review {
+                font-style: italic;
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .carousel-control-next{
+    display: none;
+  }
+
+  .carousel-control-prev{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .form-body {
+    width: 54%;
+    margin-left: 23%;
+  }
+  .carousel-control-next{
+    display: none;
+  }
+
+  .carousel-control-prev{
+    display: none;
+  }
+} 
+
+
+
+
+

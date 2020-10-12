@@ -1,0 +1,216 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2><b>Manage News</b></h2>
+                </div>
+                <div class="col-sm-6">
+                    <a href="#addEmployeeModal" class="btn btn-warning" data-toggle="modal"><i
+                            class="material-icons">&#xE147;</i> <span>Add New News</span></a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Author</th>
+                    <th>Create Date</th>
+                    <th>Image</th>
+                    <th>Short Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of listNews; let stt = index">
+                    <td>{{(currentPage)*3+(stt+1)}}</td>
+                    <td>{{i?.title}}</td>
+                    <td [innerHTML]="i?.content"></td>
+                    <td>{{i?.author}}</td>
+                    <td>{{i?.createDate}}</td>
+                    <td>
+                        <div style="height: 100px; width: 100px; object-fit: cover;">
+                            <img src="../../../../assets/img/News-Event/{{i?.image}}" alt="" class="w-100 h-100"
+                                style="object-fit: cover;">
+                        </div>
+                    </td>
+                    <td>{{i?.shortDes}}</td>
+                    <td>
+                        <button href="#editEmployeeModal" (click)="openEditForm(i)" class="edit btn btn-outline-dark"
+                            data-toggle="modal"><i class="material-icons" data-toggle="tooltip"
+                                title="Edit">&#xE254;</i></button>
+                        <button href="#deleteEmployeeModal" (click)="deleteNews(i?.id)"
+                                class="delete btn btn-outline-danger" data-toggle="modal">
+                                <i class="material-icons"
+                                data-toggle="tooltip" title="Delete">&#xE872;</i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="clearfix">
+            <div class="hint-text">Showing <b>{{getTotalRecordCurrentPage()}}</b> out of <b>{{totalRecord}}</b> entries</div>
+            <ul class="pagination">
+                <li class="page-item">
+                    <a (click)="getDataFromPreviousPage()" class="page-link">Previous</a>
+                </li>
+                <li *ngFor="let item of getListShowPage()">
+                     <button (click)="getDataFromCurrentPage(item)">{{item +1}}</button>
+                </li>
+                <li class="page-item">
+                    <a (click)="getDataFromNextPage()" class="page-link">Next</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Add Modal HTML -->
+<div id="addEmployeeModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form (ngSubmit)="addNews()" [formGroup]="addNewForm">
+                <div class="modal-header">
+                    <h4 class="modal-title">ADD NEWS</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input [formControlName]="'title'" type="text" class="form-control" required>
+                        <div *ngIf="addNewForm.get('title')?.errors?.required && addNewForm.get('title')?.touched"
+                            class="col alert alert-danger" role="alert">
+                            Please enter title of news!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <angular-editor formControlName="content" [config]="editorConfig" (ngModelChange)="onChange($event)"></angular-editor>
+                        <div *ngIf="addNewForm.get('content')?.errors?.required && addNewForm.get('content')?.touched"
+                            class="col alert alert-danger" role="alert">
+                            Please enter content of news!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Author</label>
+                        <input [formControlName]="'author'" type="text" class="form-control" required>
+                        <div *ngIf="addNewForm.get('author')?.errors?.required && addNewForm.get('author')?.touched"
+                            class="col alert alert-danger" role="alert">
+                            Please enter author of news!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Image</label>
+                        <input [formControlName]="'image'" type="text" class="form-control" required>
+                        <input type="file" accept="image/*" (change)="onSelectedFile($event)" required>
+                        <div *ngIf="addNewForm.get('image')?.errors?.required && addNewForm.get('image')?.touched"
+                            class="col alert alert-danger" role="alert">
+                            Please enter image of news!
+                        </div>
+                        <div *ngIf="!file" class="text-danger">You need a picture</div>
+                        <div *ngIf="fileExists" class="alert alert-danger" > File name already exists!</div>
+                    </div>
+                    <div class="form-group">
+                        <label>shortDes</label>
+                        <textarea [formControlName]="'shortDes'" class="form-control" required></textarea>
+                        <div *ngIf="addNewForm.get('shortDes')?.errors?.required && addNewForm.get('shortDes')?.touched"
+                            class="col alert alert-danger" role="alert">
+                            Please enter short description of news!
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" [disabled]="addNewForm.invalid || !file" class="btn btn-success" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Edit Modal HTML -->
+<div id="editEmployeeModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form (ngSubmit)="editNews()" [formGroup]="editForm">
+                <div class="modal-header">
+                    <h4 class="modal-title">EDIT NEWS</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Id</label>
+                        <input [formControlName]="'id'" type="number" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input [formControlName]="'title'" type="text" class="form-control" required>
+                        <div *ngIf="editForm.get('title')?.errors?.required && editForm.get('title')?.touched"
+                            class="col alert alert-danger" role="alert">
+                            Please enter name of news!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <angular-editor formControlName="content" [config]="editorConfig" (ngModelChange)="onChange($event)"></angular-editor>
+                        <div *ngIf="editForm.get('content')?.errors?.required && editForm.get('content')?.touched"
+                            class="col alert alert-danger" role="alert">
+                            Please enter content of news!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Author</label>
+                        <input [formControlName]="'author'" type="text" class="form-control" required>
+                        <div *ngIf="editForm.get('author')?.errors?.required && editForm.get('author')?.touched"
+                            class="col alert alert-danger" role="alert">
+                            Please enter author of news!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Create Date</label>
+                        <input [formControlName]="'createDate'" type="date" class="form-control" required>
+                        <div *ngIf="editForm.get('createDate')?.errors?.required && editForm.get('createDate')?.touched"
+                            class="col alert alert-danger" role="alert">
+                            Please enter create date of news!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Image</label>
+                        <input [formControlName]="'image'" type="text" class="form-control" readonly>
+                        <input type="file" accept="image/*" (change)="onSelectedFile($event)" required>
+                    </div>
+                    <div class="form-group">
+                        <label>shortDes</label>
+                        <textarea [formControlName]="'shortDes'" class="form-control" required></textarea>
+                        <div *ngIf="editForm.get('shortDes')?.errors?.required && editForm.get('shortDes')?.touched"
+                            class="col alert alert-danger" role="alert">
+                            Please enter short description of news!
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" [disabled]="editForm.invalid" class="btn btn-info" value="Save">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
